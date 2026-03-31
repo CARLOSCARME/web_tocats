@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tocats de Gassss | Joe Bar Style</title>
+    <style>
+        /* ESTILS GENERALS ESTIL CÒMIC */
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap'); /* Font còmic Bangers */
+
+        body {
+            font-family: 'Bangers', cursive; /* Apliquem la font còmic a tot arreu */
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            color: #000;
+            border: 8px solid #000;
+            letter-spacing: 1px;
+        }
+
+        /* --- CAPÇALERA AMB FONS DE TEXTURA --- */
+        header {
+            background-image: url('fons_capçalera.png'); /* Utilitzem la textura PNG com a fons */
+            background-size: cover; /* Ajusta la textura per cobrir tot el capçalera */
+            background-position: center; /* Centra la textura */
+            background-color: #ffcc00; /* Color de suport si no carrega la imatge */
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 8px solid #000;
+            position: relative; /* Necessari per superposar el logo */
+        }
+
+        /* El logo PNG se superposa sobre la textura */
+        .logo-superposat {
+            max-width: 250px;
+            height: auto;
+            border: 5px solid #000;
+            background: rgba(255, 255, 255, 0.8); /* Fons blanc translúcid per fer-lo destacar */
+            padding: 10px;
+            transform: rotate(-3deg);
+            box-shadow: 10px 10px 0px #000;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            -webkit-text-stroke: 2px #000;
+            text-shadow: 5px 5px 0px #000;
+            color: #e60000; /* Vermell canalla */
+        }
+
+        nav {
+            background: #000;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul { margin: 0; padding: 0; list-style: none; display: inline-flex; gap: 20px; }
+        
+        nav a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1em;
+            padding: 5px 10px;
+        }
+
+        nav a:hover {
+            color: #fff;
+            background-color: #e60000; /* Vermell canalla al hover */
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            background: #000;
+            color: #ffcc00;
+            display: inline-block;
+            padding: 5px 25px;
+            transform: skew(-15deg);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        /* TARGETES DE PERSONATGES (Grid) */
+        .grid-personatges {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card-personatge {
+            background: #fff;
+            border: 5px solid #000;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 10px 10px 0px #e60000;
+            transition: transform 0.2s;
+        }
+
+        .card-personatge:hover { transform: scale(1.02) rotate(1deg); }
+
+        .card-personatge img {
+            max-width: 100%;
+            height: auto;
+            border: 3px dashed #000;
+            margin-bottom: 20px;
+        }
+
+        .card-personatge h3 {
+            border-bottom: 4px solid #ffcc00;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+
+        /* DICCIONARI */
+        .diccionari-box {
+            background: #fff;
+            border: 6px solid #000;
+            padding: 40px;
+            box-shadow: 12px 12px 0px #ffcc00;
+        }
+
+        dt { font-weight: bold; color: #e60000; font-size: 1.5em; margin-top: 20px; }
+        dd { margin-left: 0; border-bottom: 2px solid #ddd; padding-bottom: 10px; font-style: italic; }
+
+        /* REPRODUCTOR D'ÀUDIO */
+        .audio-section {
+            background-color: #333;
+            color: #ffcc00;
+            padding: 40px;
+            border: 6px solid #000;
+            text-align: center;
+        }
+
+        audio { width: 100%; max-width: 500px; margin-top: 20px; }
+
+        /* GITHUB BUTTON */
+        .btn-github {
+            background: #24292e;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            border: 4px solid #000;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        .btn-github:hover { background: #444; }
+
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 40px;
+            margin-top: 60px;
+            border-top: 10px solid #ffcc00;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; }
+            nav ul { flex-direction: column; gap: 10px; }
+            .grid-personatges { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="Logo Tocats de Gassss" class="logo-superposat">
+    <h1>Tocats de Gassss</h1>
+    <p style="font-size: 1.5em; -webkit-text-stroke: 1px #000;"><b>"L'únic que frena aquí és el mur de la realitat"</b></p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#qui-som">Qui Som</a></li>
+        <li><a href="#personatges">Personatges</a></li>
+        <li><a href="#rutes">Rutes</a></li>
+        <li><a href="#diccionari">Diccionari</a></li>
+        <li><a href="#himne">L'Himne</a></li>
+        <li><a href="#descargues">Descàrregues</a></li>
+    </ul>
+</nav>
+
+<section id="qui-som">
+    <h2>⚠️ Avís als Navegants</h2>
+    <p style="font-size: 1.3em; line-height: 1.6em;">Benvinguts al cau dels <b>Tocats de Gassss</b>. No som professionals, no som influencers, només som una colla d'amics que creu que el so d'un tub d'escapament és millor que qualsevol simfonia de Beethoven.</p>
+</section>
+
+<section id="personatges" style="background: #e0e0e0;">
+    <h2>😎 Els Nostres Arquetips</h2>
+    <div class="grid-personatges">
+        <div class="card-personatge">
+            <img src="https://via.placeholder.com/300x150?text=Caricatura+R" alt="El R Cremat">
+            <h3>El "R" Cremat</h3>
+            <p><b>Moto:</b> Un coet amb rodes.</p>
+            <p><b>Habilitat:</b> Desaparèixer en la primera recta i esperar-nos al bar.</p>
+        </div>
+        <div class="card-personatge" style="box-shadow: 10px 10px 0px #ffcc00;">
+            <img src="https://via.placeholder.com/300x150?text=Caricatura+Classica" alt="El de la Clàssica">
+            <h3>El de la Clàssica</h3>
+            <p><b>Moto:</b> Una joia (segons ell) que sempre perd oli (segons tots).</p>
+            <p><b>Habilitat:</b> Mecànica d'emergència amb un xiclet.</p>
+        </div>
+        <div class="card-personatge">
+            <img src="https://via.placeholder.com/300x150?text=Caricatura+Esmorzador" alt="L'Esmorzador">
+            <h3>L'Esmorzador</h3>
+            <p><b>Moto:</b> Qualsevol, mentre tingui maletes per a l'allioli.</p>
+            <p><b>Habilitat:</b> Trobar el millor restaurant de forquilla.</p>
+        </div>
+    </div>
+</section>
+
+<section id="rutes">
+    <h2>📍 El Nostre Territori</h2>
+    <div style="border: 8px solid #000; background: #fff; line-height: 0;">
+        <iframe src="http://googleusercontent.com/maps.google.com/3" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</section>
+
+<section id="diccionari">
+    <div class="diccionari-box">
+        <h2>📖 Diccionari Tocat</h2>
+        <dl>
+            <dt>Fer un recte</dt>
+            <dd>Ignorar conscientment que la carretera té corbes.</dd>
+            <dt>L'última i marxem</dt>
+            <dd>Mentida universal que precedeix tres rondes més.</dd>
+            <dt>Gassss!</dt>
+            <dd>Resposta universal a qualsevol problema tècnic o personal.</dd>
+        </dl>
+    </div>
+</section>
+
+<section id="himne">
+    <div class="audio-section">
+        <h2>🎸 El Nostre Himne</h2>
+        <p>Punxa el Play per sentir l'esperit dels Tocats!</p>
+        <audio controls>
+            <source src="canço_tocats.mp3" type="audio/mpeg">
+            El teu navegador no suporta l'àudio.
+        </audio>
+    </div>
+</section>
+
+<section id="descargues" style="text-align: center;">
+    <h2>💾 Zona de Descàrregues</h2>
+    <p style="font-size: 1.2em;">Tracks GPX, rutes i material pesat al nostre repositori de GitHub:</p>
+    <a href="https://github.com/el-teu-usuari/tocatsdegassss" class="btn-github">GITHUB TOCATS DE GASSSS</a>
+</section>
+
+<footer>
+    <p style="font-size: 1.5em; text-transform: uppercase;">Tocats de Gassss © 2026 - Gas a fons!</p>
+    <p><i>Estil Joe Bar Team</i></p>
+</footer>
+
+</body>
+</html>
