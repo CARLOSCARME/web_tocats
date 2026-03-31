@@ -61,7 +61,7 @@
             z-index: 1000;
         }
 
-        nav ul { margin: 0; padding: 0; list-style: none; display: inline-flex; gap: 20px; }
+        nav ul { margin: 0; padding: 0; list-style: none; display: inline-flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
         
         nav a {
             color: #ffcc00;
@@ -126,6 +126,43 @@
             font-size: 1.8em;
         }
 
+        /* SECCIÓ RUTES I MAPA */
+        .map-container {
+            border: 8px solid #000; 
+            background: #fff; 
+            line-height: 0; 
+            box-shadow: 12px 12px 0px #e60000;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        /* SECCIÓ ESMORZARS (Novetat) */
+        .esmorzar-box {
+            background-color: #fff; 
+            border: 6px solid #000; 
+            margin-top: 40px; 
+            padding: 30px; 
+            box-shadow: 12px 12px 0px #ffcc00;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .esmorzar-foto {
+            width: 100%;
+            max-width: 350px;
+            border: 4px solid #000;
+            transform: rotate(-3deg);
+            box-shadow: 8px 8px 0px #000;
+        }
+
+        .esmorzar-info {
+            flex: 1;
+            font-size: 1.3em;
+            min-width: 250px;
+        }
+
         /* DICCIONARI */
         .diccionari-box {
             background: #fff;
@@ -177,6 +214,7 @@
             h1 { font-size: 2.5em; }
             nav ul { flex-direction: column; gap: 10px; }
             .grid-personatges { grid-template-columns: 1fr; }
+            .esmorzar-box { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -185,7 +223,7 @@
 <header>
     <img src="logo.png" alt="Logo Tocats de Gassss" class="logo-superposat">
     <h1>Tocats de Gassss</h1>
-    <p style="font-size: 1.5em; -webkit-text-stroke: 1px #000;"><b>"L'únic que frena aquí és el mur de la realitat"</b></p>
+    <p style="font-size: 1.5em; -webkit-text-stroke: 1px #000; background: rgba(255,255,255,0.7); display: inline-block; padding: 5px 15px;"><b>"L'únic que frena aquí és el mur de la realitat"</b></p>
 </header>
 
 <nav>
@@ -193,7 +231,7 @@
         <li><a href="#qui-som">Qui Som</a></li>
         <li><a href="#personatges">Personatges</a></li>
         <li><a href="#rutes">Rutes</a></li>
-        <li><a href="#diccionari">Diccionari</a></li>
+        <li><a href="#esmorzars">Esmorzars</a></li> <li><a href="#diccionari">Diccionari</a></li>
         <li><a href="#himne">L'Himne</a></li>
         <li><a href="#descargues">Descàrregues</a></li>
     </ul>
@@ -201,28 +239,27 @@
 
 <section id="qui-som">
     <h2>⚠️ Avís als Navegants</h2>
-    <p style="font-size: 1.3em; line-height: 1.6em;">Benvinguts al cau dels <b>Tocats de Gassss</b>. No som professionals, no som influencers, només som una colla d'amics que creu que el so d'un tub d'escapament és millor que qualsevol simfonia de Beethoven.</p>
+    <p style="font-size: 1.3em; line-height: 1.6em; background: #fff; padding: 20px; border: 4px solid #000; box-shadow: 8px 8px 0px #ffcc00;">Benvinguts al cau dels <b>Tocats de Gassss</b>. No som professionals, no som influencers, només som una colla d'amics que creu que el so d'un tub d'escapament és millor que qualsevol simfonia de Beethoven.</p>
 </section>
 
-<section id="personatges" style="background: #e0e0e0;">
+<section id="personatges" style="background: #e0e0e0; border-top: 8px solid #000; border-bottom: 8px solid #000;">
     <h2>😎 Els Nostres Arquetips</h2>
     <div class="grid-personatges">
         <div class="card-personatge">
-            <img src="https://via.placeholder.com/300x150?text=Caricatura+R" alt="El R Cremat">
-            <h3>El "R" Cremat</h3>
+            <img src="caricatura_R.png" alt="El R Cremat"> <h3>El "R" Cremat</h3>
             <p><b>Moto:</b> Un coet amb rodes.</p>
             <p><b>Habilitat:</b> Desaparèixer en la primera recta i esperar-nos al bar.</p>
         </div>
         <div class="card-personatge" style="box-shadow: 10px 10px 0px #ffcc00;">
-            <img src="https://via.placeholder.com/300x150?text=Caricatura+Classica" alt="El de la Clàssica">
+            <img src="https://via.placeholder.com/300x150?text=Properament" alt="El de la Clàssica">
             <h3>El de la Clàssica</h3>
-            <p><b>Moto:</b> Una joia (segons ell) que sempre perd oli (segons tots).</p>
+            <p><b>Moto:</b> Una joia (segons ell) que sempre perd oli.</p>
             <p><b>Habilitat:</b> Mecànica d'emergència amb un xiclet.</p>
         </div>
         <div class="card-personatge">
-            <img src="https://via.placeholder.com/300x150?text=Caricatura+Esmorzador" alt="L'Esmorzador">
+            <img src="https://via.placeholder.com/300x150?text=Properament" alt="L'Esmorzador">
             <h3>L'Esmorzador</h3>
-            <p><b>Moto:</b> Qualsevol, mentre tingui maletes per a l'allioli.</p>
+            <p><b>Moto:</b> Qualsevol amb maletes per a l'allioli.</p>
             <p><b>Habilitat:</b> Trobar el millor restaurant de forquilla.</p>
         </div>
     </div>
@@ -230,8 +267,23 @@
 
 <section id="rutes">
     <h2>📍 El Nostre Territori</h2>
-    <div style="border: 8px solid #000; background: #fff; line-height: 0;">
-        <iframe src="http://googleusercontent.com/maps.google.com/3" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <p style="font-size: 1.2em; margin-bottom: 20px;">Explora el cor de les Terres de l'Ebre, allà on el riu es troba amb el gassss.</p>
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48348.16851214349!2d0.6974246197116792!3d40.71221156828456!2m3!1f0!2f0!3f0!3m2!1i1024!2i1024!2h168!3m3!1m2!1s0x12a1068a731b67f5%3A0x403565611488b00!2sDelta%20de%20l&#39;Ebre!5e0!3m2!1sca!2ses!4v1711920000000!5m2!1sca!2ses" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</section>
+
+<section id="esmorzars" style="background-color: #f7f7f7; border-top: 8px solid #000; border-bottom: 8px solid #000;">
+    <h2>🍳 Control de Qualitat: L'Esmorzar</h2>
+    <div class="esmorzar-box">
+        <img src="https://via.placeholder.com/350x250?text=Foto+de+l'Esmorzar" alt="Foto de l'esmorzar de la setmana" class="esmorzar-foto">
+        <div class="esmorzar-info">
+            <h3>Bar del Riu (Sant Jaume d'Enveja)</h3>
+            <p><b>La Teca:</b> ⭐⭐⭐⭐⭐</p>
+            <p><b>L'Allioli:</b> ⭐⭐⭐⭐</p>
+            <p><b>Pàrquing Motos:</b> ✅ (Es veuen des de la taula)</p>
+            <p style="font-style: italic; background: #eee; padding: 10px; border-left: 5px solid #ffcc00; margin-top: 15px;">"La botifarra era més llarga que la recta de l'Aldea. Recomanat!" - L'Esmorzador</p>
+        </div>
     </div>
 </section>
 
@@ -240,11 +292,13 @@
         <h2>📖 Diccionari Tocat</h2>
         <dl>
             <dt>Fer un recte</dt>
-            <dd>Ignorar conscientment que la carretera té corbes.</dd>
+            <dd>Ignorar conscientment que la carretera té corbes per explorar botànica no planificada.</dd>
             <dt>L'última i marxem</dt>
-            <dd>Mentida universal que precedeix tres rondes més.</dd>
+            <dd>Mentida universal motera que sol durar entre 2 i 4 hores.</dd>
+            <dt>Anar de tranquis</dt>
+            <dd>Mentida que es diu abans de començar a tocar estriberes a cada corba.</dd>
             <dt>Gassss!</dt>
-            <dd>Resposta universal a qualsevol problema tècnic o personal.</dd>
+            <dd>Resposta universal a qualsevol problema tècnic, personal o existencial.</dd>
         </dl>
     </div>
 </section>
@@ -268,7 +322,7 @@
 
 <footer>
     <p style="font-size: 1.5em; text-transform: uppercase;">Tocats de Gassss © 2026 - Gas a fons!</p>
-    <p><i>Estil Joe Bar Team</i></p>
+    <p><i>Estil Joe Bar Team - Terres de l'Ebre</i></p>
 </footer>
 
 </body>
