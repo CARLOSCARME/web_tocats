@@ -2,7 +2,7 @@
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1024"> 
     <title>Tocats de Gassss | Joe Bar Style</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
@@ -17,6 +17,8 @@
             padding: 0;
             color: #000;
             border: 8px solid #000;
+            /* Fixem una amplada mínima per a que no es desmunti al mòbil */
+            min-width: 1000px; 
         }
 
         /* CAPÇALERA */
@@ -31,7 +33,7 @@
         }
 
         .logo-superposat {
-            max-width: 200px;
+            max-width: 180px;
             border: 5px solid #000;
             background: rgba(255, 255, 255, 0.9);
             padding: 10px;
@@ -48,68 +50,82 @@
             margin: 15px 0;
         }
 
-        /* MENÚ NAV */
+        /* MENÚ NAV - Fixat per a que no es trenqui en columnes */
         nav {
             background: #000;
-            padding: 15px;
+            padding: 10px;
             position: sticky;
             top: 0;
             z-index: 1000;
             border-bottom: 5px solid #ffcc00;
+            min-width: 1000px;
         }
 
         nav ul {
             margin: 0; padding: 0; list-style: none;
-            display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;
+            display: flex; justify-content: center; gap: 20px;
         }
 
         nav a {
             color: #ffcc00; text-decoration: none; text-transform: uppercase;
-            padding: 5px 10px; font-size: 1em;
+            padding: 5px 10px; font-size: 0.9em;
         }
 
         nav a:hover { background: #e60000; color: #fff; }
 
-        /* CONTENIDOR DE SECCIONS CENTRADES */
+        /* CONTENIDOR FIXAT */
         .container {
-            max-width: 1000px;
+            width: 960px; /* Amplada clàssica de PC */
             margin: 0 auto;
-            padding: 0 20px;
         }
 
         section {
             background: rgba(255, 255, 255, 0.85);
             border: 6px solid #000;
-            padding: 40px;
-            margin: 40px 0;
-            box-shadow: 12px 12px 0px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
         }
 
         h2 {
             background: #000; color: #ffcc00;
-            display: inline-block; padding: 5px 20px;
+            display: inline-block; padding: 5px 15px;
             transform: skew(-10deg); text-transform: uppercase;
+            font-size: 2em;
         }
 
-        /* GRIDS I BOXES */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        /* GRIDS SEMPRE EN FILES (com al PC) */
+        .grid { 
+            display: flex; 
+            gap: 20px; 
+            justify-content: space-between;
+        }
         
-        .card { background: #fff; border: 4px solid #000; padding: 20px; text-align: center; box-shadow: 8px 8px 0px #e60000; }
+        .card { 
+            flex: 1;
+            background: #fff; 
+            border: 4px solid #000; 
+            padding: 15px; 
+            text-align: center; 
+            box-shadow: 6px 6px 0px #e60000; 
+        }
         
-        .card img { max-width: 100%; border: 2px dashed #000; margin-bottom: 10px; }
+        .card img { width: 100%; border: 2px dashed #000; margin-bottom: 10px; }
 
         .map-container { border: 6px solid #000; line-height: 0; margin-top: 20px; }
 
         .diccionari-box { background: #fff; border: 4px solid #000; padding: 20px; }
-        dt { font-weight: bold; color: #e60000; font-size: 1.4em; margin-top: 15px; }
-        dd { border-bottom: 1px solid #ccc; padding-bottom: 5px; font-style: italic; }
+        dt { font-weight: bold; color: #e60000; font-size: 1.3em; margin-top: 10px; }
+        dd { border-bottom: 1px solid #ccc; padding-bottom: 5px; font-style: italic; font-size: 0.9em; }
 
         .btn-github {
-            background: #24292e; color: #fff; padding: 15px; 
+            background: #24292e; color: #fff; padding: 12px; 
             text-decoration: none; border: 4px solid #000; display: inline-block;
         }
 
-        footer { background: #000; color: #fff; text-align: center; padding: 30px; border-top: 8px solid #ffcc00; }
+        footer { background: #000; color: #fff; text-align: center; padding: 20px; border-top: 6px solid #ffcc00; min-width: 1000px; }
+
+        /* HEM ELIMINAT TOTA LA SECCIÓ @MEDIA (RESPONSIVE) */
     </style>
 </head>
 <body>
@@ -135,7 +151,7 @@
 
     <section id="qui-som">
         <h2>⚠️ Avís als Navegants</h2>
-        <p style="font-size: 1.2em;">Benvinguts al cau dels Tocats de Gassss. Som amics, som motards i l'únic que ens importa és que l'allioli estigui fort i la benzina barata.</p>
+        <p>Benvinguts al cau dels Tocats de Gassss. Som amics, som motards i l'únic que ens importa és l'allioli i la benzina.</p>
     </section>
 
     <section id="personatges">
@@ -144,17 +160,17 @@
             <div class="card">
                 <img src="caricatura_R.png">
                 <h3>El "R" Cremat</h3>
-                <p><b>Moto:</b> Un coet. <b>Habilitat:</b> Arribar el primer al bar.</p>
+                <p>Moto: Un coet.</p>
             </div>
-            <div class="card" style="box-shadow: 8px 8px 0px #ffcc00;">
+            <div class="card" style="box-shadow: 6px 6px 0px #ffcc00;">
                 <img src="caricatura_classica.png">
                 <h3>El de la Clàssica</h3>
-                <p><b>Moto:</b> Perd oli. <b>Habilitat:</b> Arreglar-ho tot amb xiclets.</p>
+                <p>Moto: Perd oli.</p>
             </div>
             <div class="card">
                 <img src="caricatura_esmorzador.png">
                 <h3>L'Esmorzador</h3>
-                <p><b>Moto:</b> Cromada. <b>Habilitat:</b> Radar de botifarres.</p>
+                <p>Moto: Cromada.</p>
             </div>
         </div>
     </section>
@@ -162,15 +178,15 @@
     <section id="rutes">
         <h2>📍 El Nostre Territori</h2>
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12034.93582496734!2d0.6133!3d40.7167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a1016839356f9d%3A0x40340f3c7333ed0!2sSant%20Jaume%20d'Enveja!5e0!3m2!1sca!2ses!4v164876543210" width="100%" height="300" style="border:0;" allowfullscreen=""></iframe>
+            <iframe src="http://googleusercontent.com/maps.google.com/2" width="100%" height="300" style="border:0;" allowfullscreen=""></iframe>
         </div>
     </section>
 
     <section id="esmorzars">
         <h2>🍳 Control de Qualitat</h2>
         <div class="grid" style="align-items: center;">
-            <img src="https://via.placeholder.com/300x200?text=Foto+Esmorzar" style="border: 4px solid #000; transform: rotate(-2deg);">
-            <div>
+            <img src="https://via.placeholder.com/300x180?text=Foto+Esmorzar" style="border: 4px solid #000; transform: rotate(-2deg); width: 250px;">
+            <div style="margin-left: 20px;">
                 <h3>Bar del Riu (Sant Jaume)</h3>
                 <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
                 <p><i>"L'allioli es nota fins al dilluns."</i></p>
@@ -182,15 +198,13 @@
         <h2>📖 Diccionari Tocat</h2>
         <dl class="diccionari-box">
             <dt>Fer un recte</dt><dd>Explorar botànica no planificada.</dd>
-            <dt>L'última i marxem</dt><dd>Mentida que dura 3 hores.</dd>
             <dt>Gassss!</dt><dd>Resposta a qualsevol dubte.</dd>
         </dl>
     </section>
 
     <section id="himne" style="text-align:center;">
         <h2>🎸 L'Himne</h2>
-        <p>Sintonitza el so dels Tocats:</p>
-        <audio controls style="width:100%;">
+        <audio controls style="width:80%;">
             <source src="canço_tocats.mp3" type="audio/mpeg">
         </audio>
     </section>
@@ -198,11 +212,11 @@
     <section id="sortides">
         <h2>📅 Pròxima Sortida</h2>
         <div class="grid">
-            <div>
+            <div style="flex:1;">
                 <p><strong>Destí:</strong> Riudecanyes</p>
                 <p><strong>Hora:</strong> 08:30h - L'Aldea</p>
             </div>
-            <div style="background:#e3f2fd; padding:15px; border:3px solid #2196f3; text-align:center;">
+            <div style="flex:1; background:#e3f2fd; padding:10px; border:3px solid #2196f3; text-align:center;">
                 <h4>Temps: 20°C - Sol ☀️</h4>
             </div>
         </div>
@@ -211,29 +225,22 @@
     <section id="videos">
         <h2>🎥 Zona Motovlog</h2>
         <div class="grid">
-            <iframe width="100%" height="200" src="https://www.youtube.com/embed/0oaUn8HCzzY" frameborder="0" allowfullscreen></iframe>
-            <iframe width="100%" height="200" src="https://www.youtube.com/embed/5t6gLc5k7xI" frameborder="0" allowfullscreen></iframe>
+            <iframe width="48%" height="200" src="https://www.youtube.com/embed/0oaUn8HCzzY" frameborder="0" allowfullscreen></iframe>
+            <iframe width="48%" height="200" src="https://www.youtube.com/embed/5t6gLc5k7xI" frameborder="0" allowfullscreen></iframe>
         </div>
     </section>
 
     <section id="fitxatges">
         <h2>📝 Vols ser un Tocat?</h2>
-        <form style="display:flex; flex-direction:column; gap:10px;">
+        <form style="display:flex; flex-direction:column; gap:10px; width: 400px; margin: 0 auto;">
             <input type="text" placeholder="El teu nom" style="padding:10px; border:3px solid #000;">
             <button type="button" style="background:#ffcc00; font-family:'Bangers'; padding:10px; border:3px solid #000;">Enviar! 🏁</button>
         </form>
-        <div style="text-align:center; font-size:3em; margin-top:20px;">
-            <a href="#">📘</a> <a href="#">📲</a>
-        </div>
     </section>
 
-    <section id="descargues" style="text-align:center;">
-        <h2>💾 GitHub</h2>
-        <p>Baixa't els tracks GPX aquí:</p>
-        <a href="#" class="btn-github">ACCEDIR AL REPO</a>
-    </section>
+</div>
 
-</div> <footer>
+<footer>
     <p>Tocats de Gassss © 2026 - Terres de l'Ebre</p>
 </footer>
 
