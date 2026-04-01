@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tocats de Gassss | Joe Bar Style</title>
     <style>
+
         /* ESTILS GENERALS ESTIL CÒMIC */
         @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap'); /* Font còmic Bangers */
 
@@ -251,17 +252,17 @@
             <p><b>Habilitat:</b> Desaparèixer en la primera recta i esperar-nos al bar.</p>
         </div>
         <div class="card-personatge" style="box-shadow: 10px 10px 0px #ffcc00;">
-            <img src="https://via.placeholder.com/300x150?text=Properament" alt="El de la Clàssica">
-            <h3>El de la Clàssica</h3>
-            <p><b>Moto:</b> Una joia (segons ell) que sempre perd oli.</p>
-            <p><b>Habilitat:</b> Mecànica d'emergència amb un xiclet.</p>
-        </div>
-        <div class="card-personatge">
-            <img src="https://via.placeholder.com/300x150?text=Properament" alt="L'Esmorzador">
-            <h3>L'Esmorzador</h3>
-            <p><b>Moto:</b> Qualsevol amb maletes per a l'allioli.</p>
-            <p><b>Habilitat:</b> Trobar el millor restaurant de forquilla.</p>
-        </div>
+    <img src="caricatura_classica.png" alt="El de la Clàssica">
+    <h3>El de la Clàssica</h3>
+    <p><b>Moto:</b> Una joia (segons ell) que sempre perd oli.</p>
+    <p><b>Habilitat:</b> Mecànica d'emergència amb un xiclet.</p>
+</div>
+       <div class="card-personatge">
+    <img src="caricatura_esmorzador.png" alt="L'Esmorzador">
+    <h3>L'Esmorzador</h3>
+    <p><b>Moto:</b> Custom cromada amb espai per al tàper.</p>
+    <p><b>Habilitat:</b> Trobar allioli on ningú més en troba.</p>
+</div>
     </div>
 </section>
 
@@ -318,6 +319,57 @@
     <h2>💾 Zona de Descàrregues</h2>
     <p style="font-size: 1.2em;">Tracks GPX, rutes i material pesat al nostre repositori de GitHub:</p>
     <a href="https://github.com/el-teu-usuari/tocatsdegassss" class="btn-github">GITHUB TOCATS DE GASSSS</a>
+</section>
+<nav style="background: #333; padding: 15px; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid #ffcc00;">
+    <ul style="list-style: none; display: flex; justify-content: center; gap: 20px; margin: 0; padding: 0; flex-wrap: wrap;">
+        <li><a href="#personatges" style="color: white; text-decoration: none; font-weight: bold; text-transform: uppercase;">Personatges</a></li>
+        <li><a href="#sortides" style="color: white; text-decoration: none; font-weight: bold; text-transform: uppercase;">Sortides i Clima</a></li>
+        <li><a href="#videos" style="color: white; text-decoration: none; font-weight: bold; text-transform: uppercase;">Vídeos</a></li>
+        <li><a href="#fitxatges" style="color: white; text-decoration: none; font-weight: bold; text-transform: uppercase;">Fitxatges</a></li>
+    </ul>
+</nav>
+
+<section id="sortides" style="background: white; margin: 20px; padding: 20px; border: 3px solid #333; box-shadow: 10px 10px 0px #ffcc00;">
+    <h2 style="text-align: center; color: #d32f2f; text-transform: uppercase;">📅 Pròxima Sortida i Temps</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
+        <div style="flex: 1; min-width: 280px;">
+            <p><strong>📍 Destí:</strong> Pantà de Riudecanyes</p>
+            <p><strong>🕒 Trobada:</strong> 08:30h - Benzinera l'Aldea</p>
+            <p><strong>🥓 Esmorzar:</strong> Galtes de porc i allioli.</p>
+        </div>
+        <div style="flex: 1; min-width: 250px; background: #e3f2fd; padding: 15px; border-radius: 10px; border: 2px solid #2196f3; text-align: center;">
+            <h4 style="margin: 0; color: #1976d2;">☁️ Previsió del temps</h4>
+            <p style="font-size: 1.4em; margin: 10px 0;"><strong>20°C - Sol</strong></p>
+            <p style="font-size: 0.8em;">(Ideal per cremar benzina!)</p>
+        </div>
+    </div>
+</section>
+
+<section id="videos" style="margin: 20px; padding: 20px; background: #eee; border: 2px solid #333;">
+    <h2 style="text-align: center; text-transform: uppercase;">🎥 Zona Motovlog</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        <div style="background: white; padding: 10px; border: 1px solid #ccc;">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/0oaUn8HCzzY" frameborder="0" allowfullscreen></iframe>
+            <p style="font-weight: bold; margin-top: 10px;">Les 10 millors carreteres de Catalunya</p>
+        </div>
+        <div style="background: white; padding: 10px; border: 1px solid #ccc;">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/5t6gLc5k7xI" frameborder="0" allowfullscreen></iframe>
+            <p style="font-weight: bold; margin-top: 10px;">Consells de seguretat</p>
+        </div>
+    </div>
+</section>
+
+<section id="fitxatges" style="background: #333; color: white; margin: 20px; padding: 20px;">
+    <h2 style="text-align: center; color: #ffcc00; text-transform: uppercase;">📝 Vols ser un Tocat de Gassss?</h2>
+    <form style="display: flex; flex-direction: column; max-width: 500px; margin: 0 auto; gap: 10px;">
+        <input type="text" placeholder="Nom o Àlies" style="padding: 10px;">
+        <input type="text" placeholder="Quina màquina portes?" style="padding: 10px;">
+        <button type="button" style="background: #ffcc00; color: #333; padding: 12px; font-weight: bold; border: none; cursor: pointer;">Enviar Fitxatge 🏁</button>
+    </form>
+    <div style="text-align: center; margin-top: 30px; font-size: 2em;">
+        <a href="https://facebook.com/TEU-USUARI" style="text-decoration: none; color: white; margin-right: 20px;">📘</a>
+        <a href="https://wa.me/34600000000" style="text-decoration: none; color: white;">📲</a>
+    </div>
 </section>
 
 <footer>
