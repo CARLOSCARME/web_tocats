@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1024"> 
-    <title>Tocats de Gassss | Joe Bar Style</title>
+    <title>Tocats de Gassss | L'Arxiu Sagrat</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
@@ -13,242 +13,199 @@
             background-attachment: fixed;
             background-size: cover;
             background-color: #f4e1c1;
-            margin: 0;
-            padding: 0;
-            color: #000;
-            border: 10px solid #000; /* Vora més gruixuda */
+            margin: 0; padding: 0; color: #000;
+            border: 12px solid #000;
             min-width: 1000px; 
-            font-size: 1.2em; /* Augment general de la font */
         }
 
-        header {
-            background-image: url('fons_capçalera.png');
-            background-size: cover;
-            background-position: center;
-            background-color: #ffcc00;
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 10px solid #000;
-        }
+        /* TÍTOLS ESTIL CÒMIC */
+        h1 { font-size: 5.5em; -webkit-text-stroke: 3px #000; text-shadow: 6px 6px 0px #000; color: #e60000; margin: 15px 0; text-transform: uppercase; text-align: center; }
+        h2 { background: #000; color: #ffcc00; display: inline-block; padding: 10px 30px; transform: skew(-15deg); font-size: 3.5em; margin-bottom: 35px; text-transform: uppercase; border: 4px solid #000; }
+        p, li, dt, dd { font-size: 1.8em; line-height: 1.4em; }
 
-        .logo-superposat {
-            max-width: 250px; /* Logo més gran */
-            border: 6px solid #000;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 15px;
-            transform: rotate(-3deg);
-            box-shadow: 12px 12px 0px #000;
-            margin-bottom: 25px;
-        }
+        header { background-image: url('fons_capçalera.png'); background-size: cover; padding: 60px 20px; text-align: center; border-bottom: 10px solid #000; }
+        .logo-superposat { max-width: 280px; border: 8px solid #000; background: #fff; padding: 15px; transform: rotate(-3deg); box-shadow: 12px 12px 0px #000; cursor: pointer; }
 
-        h1 {
-            font-size: 5em; /* Títol gegant */
-            text-transform: uppercase;
-            -webkit-text-stroke: 3px #000;
-            text-shadow: 6px 6px 0px #000;
-            color: #e60000;
-            margin: 10px 0;
-        }
+        nav { background: #000; padding: 25px; position: sticky; top: 0; z-index: 1000; border-bottom: 8px solid #ffcc00; }
+        nav ul { margin: 0; padding: 0; list-style: none; display: flex; justify-content: center; gap: 12px; }
+        nav a { color: #ffcc00; text-decoration: none; text-transform: uppercase; font-size: 1.3em; padding: 5px 8px; }
+        nav a:hover { background: #e60000; color: #fff; transform: scale(1.1); display: inline-block; }
 
-        nav {
-            background: #000;
-            padding: 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 6px solid #ffcc00;
-        }
+        .container { width: 960px; margin: 0 auto; padding: 40px 0; }
+        section { background: rgba(255, 255, 255, 0.94); border: 10px solid #000; padding: 50px; margin-bottom: 60px; box-shadow: 20px 20px 0px rgba(0,0,0,0.15); }
 
-        nav ul {
-            margin: 0; padding: 0; list-style: none;
-            display: flex; justify-content: center; gap: 20px;
-        }
+        /* GALERIA LIGHTBOX */
+        .galeria-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .galeria-item { border: 6px solid #000; cursor: pointer; overflow: hidden; height: 220px; position: relative; background: #000; box-shadow: 8px 8px 0px #000; }
+        .galeria-item img, .galeria-item video { width: 100%; height: 100%; object-fit: cover; }
+        .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3.5em; color: #fff; pointer-events: none; }
+        #lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 2000; justify-content: center; align-items: center; }
+        #lightbox-content { max-width: 90%; max-height: 85%; border: 8px solid #fff; outline: 10px solid #000; }
 
-        nav a {
-            color: #ffcc00; text-decoration: none; text-transform: uppercase;
-            padding: 5px 15px; font-size: 1.4em; /* Menú més gran */
-        }
+        /* FITXES */
+        .grid { display: flex; gap: 30px; flex-wrap: wrap; }
+        .card { flex: 1; min-width: 280px; background: #fff; border: 8px solid #000; padding: 25px; box-shadow: 12px 12px 0px #000; text-align: center; }
+        .card img { width: 100%; border: 4px solid #000; margin-bottom: 15px; }
+        .card h3 { background: #e60000; color: #fff; padding: 10px; font-size: 2.2em; border: 4px solid #000; transform: rotate(-1deg); }
 
-        nav a:hover { background: #e60000; color: #fff; }
+        /* RADAR TIKTOK */
+        .tiktok-card { border: 8px solid #000; padding: 35px; box-shadow: 15px 15px 0px #00f2ea; background:#fff; text-align: center; }
+        .btn-trip { background: #00af87; color: #fff; padding: 15px 30px; display: inline-block; text-decoration: none; border: 6px solid #000; font-size: 1.8em; box-shadow: 6px 6px 0px #000; }
+        .btn-tiktok { background: #000; color: #fff; padding: 15px 30px; display: inline-block; text-decoration: none; border: 6px solid #ff0050; font-size: 1.8em; box-shadow: 6px 6px 0px #00f2ea; margin-top: 15px; }
 
-        .container {
-            width: 980px;
-            margin: 0 auto;
-            padding: 30px 0;
-        }
+        /* SLIDER EVENTS */
+        .slider-container { position: relative; overflow: hidden; border: 10px solid #000; background: #fff; height: 580px; box-shadow: 15px 15px 0px #ffcc00; }
+        .slider { display: flex; transition: transform 0.5s ease-in-out; height: 100%; }
+        .slide { min-width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .btn-nav { position: absolute; top: 50%; transform: translateY(-50%); background: #000; color: #ffcc00; border: 4px solid #ffcc00; font-size: 3em; padding: 5px 20px; cursor: pointer; z-index: 10; }
 
-        section {
-            background: rgba(255, 255, 255, 0.88);
-            border: 8px solid #000;
-            padding: 50px;
-            margin-bottom: 50px;
-            box-shadow: 15px 15px 0px rgba(0,0,0,0.15);
-        }
+        /* ALTRES SECCIONS */
+        .caixa-esmorzar { background: #ffcc00; border: 8px solid #000; padding: 40px; transform: rotate(-1deg); box-shadow: 15px 15px 0px #000; }
+        .caixa-meteo { background: #e3f2fd; border: 8px solid #2196f3; padding: 30px; box-shadow: 12px 12px 0px #000; text-align: center; }
+        dt { font-weight: bold; color: #e60000; font-size: 2.5em; margin-top: 30px; }
 
-        h2 {
-            background: #000; color: #ffcc00;
-            display: inline-block; padding: 10px 30px;
-            transform: skew(-15deg); text-transform: uppercase;
-            font-size: 3em; /* Títols de secció més grans */
-            margin-bottom: 35px;
-        }
-
-        .grid { display: flex; gap: 25px; }
-        
-        .card { 
-            flex: 1;
-            background: #fff; 
-            border: 6px solid #000; 
-            padding: 30px; 
-            text-align: center; 
-            box-shadow: 12px 12px 0px #e60000; 
-        }
-        
-        .card img { width: 100%; border: 4px dashed #000; margin-bottom: 20px; }
-        .card h3 { font-size: 2em; border-bottom: 5px solid #ffcc00; margin-top: 0; }
-        .card p { font-size: 1.3em; } /* Textos de les cards */
-
-        .map-container { border: 10px solid #000; box-shadow: 15px 15px 0px #e60000; border-radius: 15px; overflow: hidden; }
-
-        .esmorzar-box { display: flex; align-items: center; gap: 40px; background: #fff; border: 8px solid #000; padding: 40px; box-shadow: 15px 15px 0px #ffcc00; }
-        .esmorzar-info h3 { font-size: 2.2em; }
-        .esmorzar-info p { font-size: 1.5em; }
-
-        dt { font-weight: bold; color: #e60000; font-size: 2em; margin-top: 25px; }
-        dd { margin-left: 0; border-bottom: 3px solid #ddd; padding-bottom: 15px; font-style: italic; font-size: 1.4em; }
-
-        .btn-github { background: #24292e; color: #fff; padding: 20px 40px; text-decoration: none; border: 5px solid #000; display: inline-block; font-size: 1.5em; }
-
-        footer { background: #000; color: #fff; text-align: center; padding: 50px; border-top: 12px solid #ffcc00; }
-        footer p { font-size: 1.5em; }
+        footer { background: #000; color: #fff; text-align: center; padding: 80px; border-top: 15px solid #ffcc00; }
     </style>
 </head>
 <body>
 
+<div id="lightbox" onclick="tancarGaleria()">
+    <div id="media-container" onclick="event.stopPropagation()"></div>
+</div>
+
+<audio id="so-motor" src="motor_gas.mp3"></audio>
+<audio id="so-claxon" src="claxon.mp3"></audio>
+
 <header>
-    <img src="logo.png" alt="Logo Tocats de Gassss" class="logo-superposat">
+    <img src="logo.png" alt="Logo" class="logo-superposat" onclick="tocarClaxon()">
     <h1>Tocats de Gassss</h1>
 </header>
 
 <nav>
     <ul>
-        <li><a href="#qui-som">Qui Som</a></li>
-        <li><a href="#personatges">Personatges</a></li>
-        <li><a href="#rutes">Rutes</a></li>
-        <li><a href="#esmorzars">Esmorzars</a></li>
-        <li><a href="#diccionari">Diccionari</a></li>
-        <li><a href="#sortides">Sortides</a></li>
-        <li><a href="#videos">Vídeos</a></li>
+        <li><a href="#inici">Inici</a></li>
+        <li><a href="#motos">Motos</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#tiktok">Radar</a></li>
+        <li><a href="#esmorzars">Teca</a></li>
+        <li><a href="#himne">Himne</a></li>
+        <li><a href="#meteo">Temps</a></li>
     </ul>
 </nav>
 
 <div class="container">
 
-    <section id="qui-som">
-        <h2>⚠️ Avís als Navegants</h2>
-        <p style="font-size: 1.8em; line-height: 1.5em;">Benvinguts al cau dels <b>Tocats de Gassss</b>. No som professionals, no som influencers, només som una colla d'amics que creu que el so d'un tub d'escapament és millor que qualsevol simfonia de Beethoven.</p>
+    <section id="inici">
+        <h2>⚠️ Benvinguts</h2>
+        <p>Al cau dels <b>Tocats de Gassss</b>. Aquí mana l'allioli i el puny de gas!</p>
     </section>
 
-    <section id="personatges">
-        <h2>😎 Els Nostres Arquetips</h2>
+    <section id="motos">
+        <h2>🏍️ Les Nostres Màquines</h2>
         <div class="grid">
             <div class="card">
-                <img src="caricatura_R.png" alt="El R Cremat">
-                <h3>El "R" Cremat</h3>
-                <p><b>Moto:</b> Un coet amb rodes.</p>
-                <p><b>Habilitat:</b> Desaparèixer i esperar al bar.</p>
-            </div>
-            <div class="card" style="box-shadow: 12px 12px 0px #ffcc00;">
-                <img src="caricatura_classica.png" alt="El de la Clàssica">
-                <h3>El de la Clàssica</h3>
-                <p><b>Moto:</b> Una joia que perd oli.</p>
-                <p><b>Habilitat:</b> Mecànica amb un xiclet.</p>
+                <img src="moto1.png">
+                <h3>La Bala Vermella</h3>
+                <p><b>Yamaha R6:</b> Desapareix en la primera recta i ens espera 20 minuts.</p>
             </div>
             <div class="card">
-                <img src="caricatura_esmorzador.png" alt="L'Esmorzador">
-                <h3>L'Esmorzador</h3>
-                <p><b>Moto:</b> Custom cromada.</p>
-                <p><b>Habilitat:</b> Radar d'allioli.</p>
+                <img src="moto2.png">
+                <h3>La Cafetera</h3>
+                <p><b>Sanglas 400:</b> Perd oli amb un orgull que ja voldrien les modernes.</p>
+            </div>
+            <div class="card">
+                <img src="moto3.png">
+                <h3>El Sofà de Ferro</h3>
+                <p><b>Harley Sportster:</b> Troba l'allioli més fort de la comarca.</p>
             </div>
         </div>
     </section>
 
-  <section id="rutes">
-    <h2>📍 El Nostre Territori</h2>
-    <p style="font-size: 1.5em; margin-bottom: 25px;">Explora el cor de les Terres de l'Ebre, allà on el riu es troba amb el gassss.</p>
-    <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12053.473551065147!2d0.6027581!3d40.731934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a0e2637b926487%3A0x40340f3cf4a9550!2s43896%20L'Aldea%2C%20Tarragona!5e0!3m2!1sca!2ses!4v1710000000000!5m2!1sca!2ses" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-</section>
+    <section id="galeria">
+        <h2>📸 Galeria Multimèdia</h2>
+        <div class="galeria-grid">
+            <div class="galeria-item" onclick="obrirGaleria('foto1.jpg', 'img')"><img src="foto1.jpg"></div>
+            <div class="galeria-item" onclick="obrirGaleria('video1.mp4', 'video')">
+                <video src="video1.mp4" muted></video>
+                <div class="play-icon">▶</div>
+            </div>
+            <div class="galeria-item" onclick="obrirGaleria('foto2.jpg', 'img')"><img src="foto2.jpg"></div>
+        </div>
+    </section>
 
-<section id="videos">
-    <h2>🎥 Zona Motovlog</h2>
-    <div class="grid">
-        <div style="flex: 1; background: #fff; padding: 15px; border: 4px solid #000;">
-            <iframe width="100%" height="280" src="https://www.youtube.com/embed/6_67H_T-FpQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <p style="font-size: 1.2em; margin-top: 10px; font-weight: bold;">Les 10 millors carreteres de Catalunya</p>
+    <section id="events">
+        <h2>📅 Pròxims Events</h2>
+        <div class="slider-container">
+            <button class="btn-nav" style="left:10px" onclick="moveSlide(-1)">❮</button>
+            <div class="slider" id="main-slider">
+                <div class="slide"><a href="https://web1.com" target="_blank"><img src="cartell_event1.jpg"></a><p>🏁 Concentració de l'Ebre</p></div>
+                <div class="slide"><a href="https://web2.com" target="_blank"><img src="cartell_event2.jpg"></a><p>🥩 Esmorzar Moter Tortosa</p></div>
+            </div>
+            <button class="btn-nav" style="right:10px" onclick="moveSlide(1)">❯</button>
         </div>
-        <div style="flex: 1; background: #fff; padding: 15px; border: 4px solid #000;">
-            <iframe width="100%" height="280" src="https://www.youtube.com/embed/Z6_9vIn7u8g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <p style="font-size: 1.2em; margin-top: 10px; font-weight: bold;">Consells de seguretat</p>
+    </section>
+
+    <section id="tiktok">
+        <h2>🔍 Radar de Bars</h2>
+        <div class="tiktok-card">
+            <a href="https://www.tripadvisor.es/Restaurant_Review-g1078802-d12082657-Reviews-Bar_Maria-Torreblanca_Province_of_Castellon_Valencian_Community.html" target="_blank" class="btn-trip">ANAR AL BAR MARIA 🍴</a><br>
+            <a href="https://www.tiktok.com/@tocatsdegassss" target="_blank" class="btn-tiktok">TIKTOK OFICIAL 📱</a>
         </div>
-    </div>
-</section>
+    </section>
 
     <section id="esmorzars">
         <h2>🍳 Control de Qualitat</h2>
-        <div class="esmorzar-box">
-            <img src="https://via.placeholder.com/350x250?text=Teca+Bona" alt="Foto esmorzar" style="width: 350px; border: 6px solid #000; transform: rotate(-3deg); box-shadow: 10px 10px 0px #000;">
-            <div class="esmorzar-info">
-                <h3>Bar del Riu (Sant Jaume)</h3>
-                <p><b>La Teca:</b> ⭐⭐⭐⭐⭐</p>
-                <p style="font-style: italic; background: #eee; padding: 20px; border-left: 8px solid #ffcc00; margin-top: 20px;">"La botifarra era més llarga que la recta de l'Aldea. Recomanat!" - L'Esmorzador</p>
-            </div>
+        <div class="caixa-esmorzar">
+            <p style="font-size:2.5em; margin:0;"><b>Bar del Riu (Sant Jaume)</b></p>
+            <p style="font-style:italic; margin-top:15px;">"La botifarra era més llarga que la recta de l'Aldea. Recomanat 100%."</p>
         </div>
     </section>
 
-    <section id="diccionari">
-        <h2>📖 Diccionari Tocat</h2>
-        <dl>
-            <dt>Fer un recte</dt>
-            <dd>Ignorar conscientment que la carretera té corbes per explorar botànica no planificada.</dd>
-            <dt>Gassss!</dt>
-            <dd>Resposta universal a qualsevol problema tècnic, personal o existencial.</dd>
-        </dl>
-    </section>
-
-    <section id="sortides">
-        <h2>📅 Pròxima Sortida</h2>
-        <div class="grid" style="align-items: center;">
-            <div style="flex: 1.2;">
-                <p style="font-size: 1.6em;"><strong>📍 Destí:</strong> Pantà de Riudecanyes</p>
-                <p style="font-size: 1.6em;"><strong>🕒 Trobada:</strong> 08:30h - Benzinera l'Aldea</p>
-            </div>
-            <div style="flex: 1; background: #e3f2fd; padding: 30px; border: 6px solid #2196f3; text-align: center; border-radius: 20px;">
-                <h4 style="margin: 0; color: #1976d2; font-size: 1.8em;">☁️ Previsió</h4>
-                <p style="font-size: 3em; margin: 10px 0;"><strong>20°C - Sol</strong></p>
-            </div>
+    <section id="himne">
+        <h2>🎸 L'Himne Oficial</h2>
+        <div style="text-align:center;">
+            <p style="margin-bottom:20px;">Fes sonar l'himne de la colla:</p>
+            <audio controls style="width:100%; border:4px solid #000;"><source src="canço_tocats.mp3" type="audio/mpeg"></audio>
         </div>
     </section>
 
-    <section id="videos">
-        <h2>🎥 Zona Motovlog</h2>
-        <div class="grid">
-            <div style="flex: 1; background: #fff; padding: 15px; border: 4px solid #000;">
-                <iframe width="100%" height="280" src="https://www.youtube.com/embed/0oaUn8HCzzY" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div style="flex: 1; background: #fff; padding: 15px; border: 4px solid #000;">
-                <iframe width="100%" height="280" src="https://www.youtube.com/embed/5t6gLc5k7xI" frameborder="0" allowfullscreen></iframe>
-            </div>
+    <section id="meteo">
+        <h2>🌤️ Previsió i Mapa</h2>
+        <div class="caixa-meteo">
+            <p style="font-size:3em; margin:0; color:#1976d2;">📍 Riudecanyes</p>
+            <p style="font-size:3.5em; margin:10px 0;"><b>20°C - SOL I GASSSS</b></p>
+        </div>
+        <div style="margin-top:40px;">
+            <iframe src="https://www.google.com/maps/embed?pb=" width="100%" height="400" style="border:8px solid #000;"></iframe>
         </div>
     </section>
 
 </div>
 
 <footer>
-    <p style="font-size: 2.2em; text-transform: uppercase; margin: 0;">Tocats de Gassss © 2026</p>
-    <p>Terres de l'Ebre - Gas a fons!</p>
+    <p style="font-size:3em;">TOCATS DE GASSSS © 2026</p>
 </footer>
+
+<script>
+    function obrirGaleria(url, tipus) {
+        const lb = document.getElementById('lightbox');
+        const cont = document.getElementById('media-container');
+        cont.innerHTML = tipus === 'img' ? `<img src="${url}" id="lightbox-content">` : `<video src="${url}" id="lightbox-content" controls autoplay></video>`;
+        lb.style.display = 'flex';
+    }
+    function tancarGaleria() { document.getElementById('lightbox').style.display = 'none'; }
+
+    let currentSlide = 0;
+    function moveSlide(dir) {
+        const slider = document.getElementById('main-slider');
+        currentSlide = (currentSlide + dir + slider.children.length) % slider.children.length;
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+    const soMotor = document.getElementById("so-motor");
+    const soClaxon = document.getElementById("so-claxon");
+    function tocarClaxon() { soClaxon.currentTime = 0; soClaxon.play(); }
+</script>
 
 </body>
 </html>
